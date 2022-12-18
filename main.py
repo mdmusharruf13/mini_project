@@ -1,15 +1,12 @@
 import cv2
-import numpy as np
 import face_recognition
+import numpy as np
 import os
 from datetime import datetime,date
 import tkinter as tk
 from tkinter import *
 from tkinter import filedialog,messagebox, ttk
 import pandas as pd
-from PIL import Image, ImageTk
-
-
 
 def File_dialog():
     """This Function will open the file explorer and assign the chosen file path to label_file"""
@@ -167,12 +164,14 @@ page1.pack(pady=100)
 page2 = tk.Frame(mainFrame)
 p2_lb = tk.Label(page2,text="Attendance Sheet", font=("Bold",30))
 p2_lb.pack(side=tk.TOP)
-frame1 = Frame(page2,bg="white",width=700,height=400)
+frame1 = Frame(page2,bg="white",width=700,height=300)
 frame1.pack_propagate(False) # tells the root to not let the widgets inside it determine its size.
 frame1.pack()
 
+frame2 = Frame(page2,bg="skyblue",width=700,height=130).pack(side=BOTTOM)
+
 file_frame = tk.LabelFrame(page2, text="Open File")
-file_frame.place(height=130, width=700, rely=0.67, relx=0)
+file_frame.place(height=140, width=700, rely=0.72, relx=0)
 
 # Buttons
 button1 = tk.Button(file_frame, text="Browse A File",font=("Bold",15),bg='green',fg='white', command=File_dialog)
